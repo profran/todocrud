@@ -1,0 +1,7 @@
+@host = localhost:3000
+@token = Bearer e975b15aa477ee440417ea069e8ef728a22933f0
+
+GET http://{{host}} HTTP/1.1
+
+###
+
