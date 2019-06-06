@@ -1,7 +1,41 @@
-@host = localhost:3000
-@token = Bearer e975b15aa477ee440417ea069e8ef728a22933f0
-
+@host = localhost:3001
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjZjkwMGY5M2M0OTFkNDlmNWQ5NTkwYSIsImlhdCI6MTU1OTgzNzE0MSwiZXhwIjoxNTU5ODQwNzQxfQ.V5xJ5L0P0fEJ-DTxnivOrrsO5p6BqB_9q_UMIkSUhqQ
 GET http://{{host}} HTTP/1.1
 
 ###
 
+POST http://{{host}}/users/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Francesco Silvetti",
+    "email": "francescosilvetti8@gmail.com",
+    "password": "pepe1234"
+}
+
+###
+
+POST http://{{host}}/users/authenticate HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "francescosilvetti8@gmail.com",
+    "password": "pepe1234"
+}
+
+###
+
+POST http://{{host}}/todos/ HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjZjkwMGY5M2M0OTFkNDlmNWQ5NTkwYSIsImlhdCI6MTU1OTgzNzE0MSwiZXhwIjoxNTU5ODQwNzQxfQ.V5xJ5L0P0fEJ-DTxnivOrrsO5p6BqB_9q_UMIkSUhqQ
+
+{
+    "title": "Third todo",
+    "desc": "It works, yay!"
+}
+
+###
+
+GET http://{{host}}/todos/ HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjZjkwMGY5M2M0OTFkNDlmNWQ5NTkwYSIsImlhdCI6MTU1OTgzNzE0MSwiZXhwIjoxNTU5ODQwNzQxfQ.V5xJ5L0P0fEJ-DTxnivOrrsO5p6BqB_9q_UMIkSUhqQ
