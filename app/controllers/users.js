@@ -15,9 +15,9 @@ module.exports = {
       } else {
         if (bcrypt.compareSync(req.body.password, userInfo.password)) {
           const token = jwt.sign({ id: userInfo._id }, req.app.get('secretKey'), { expiresIn: '1h' })
-          res.json({ status: 'success', token: token, data: { user: userInfo } })
+          res.json({ status: 'success', token: token, user: { name: userInfo.name, email: userInfo.email } })
         } else {
-          res.json({ status: 'error', message: 'Email and/or password not valid', data: null })
+          res.json({ status: 'error', message: 'Email and/or password not valid' })
         }
       }
     })

@@ -1,6 +1,7 @@
 const express = require('express')
 const logger = require('morgan')
 const users = require('./routes/users')
+const todos = require('./routes/todos')
 const bodyParser = require('body-parser')
 const mongoose = require('./config/database')
 const CONFIG = require('./config/config')
@@ -20,10 +21,10 @@ app.get('/', function (req, res) {
 
 app.use('/users', users)
 
-app.use('/movies', validateUser)
+app.use('/todos', validateUser, todos)
 
 function validateUser (req, res, next) {
-  jwt.verify(req.headers['Authorization'], req.app.get('secretKey'), function (err, decoded) {
+  jwt.verify(req.headers['authorization'], req.app.get('secretKey'), function (err, decoded) {
     if (err) {
       res.json({ status: 'error', message: err.message })
     } else {
