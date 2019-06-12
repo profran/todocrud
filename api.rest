@@ -1,5 +1,5 @@
-@host = localhost:3001
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjZjkwMGY5M2M0OTFkNDlmNWQ5NTkwYSIsImlhdCI6MTU1OTgzNzE0MSwiZXhwIjoxNTU5ODQwNzQxfQ.V5xJ5L0P0fEJ-DTxnivOrrsO5p6BqB_9q_UMIkSUhqQ
+@host = localhost:3002
+
 GET http://{{host}} HTTP/1.1
 
 ###
@@ -27,15 +27,24 @@ Content-Type: application/json
 
 POST http://{{host}}/todos/ HTTP/1.1
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjZjkwMGY5M2M0OTFkNDlmNWQ5NTkwYSIsImlhdCI6MTU1OTgzNzE0MSwiZXhwIjoxNTU5ODQwNzQxfQ.V5xJ5L0P0fEJ-DTxnivOrrsO5p6BqB_9q_UMIkSUhqQ
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjZjkwMGY5M2M0OTFkNDlmNWQ5NTkwYSIsImlhdCI6MTU2MDI5NzIyOSwiZXhwIjoxNTYwMzAwODI5fQ.VyeKtzrCkLVJ_Ja1Q6OI4vF_-3uXvTWqZFAyDUnChso
 
 {
     "title": "Third todo",
     "desc": "It works, yay!"
+}
+###
+
+DELETE http://{{host}}/todos/ HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjZjkwMGY5M2M0OTFkNDlmNWQ5NTkwYSIsImlhdCI6MTU2MDI5NzIyOSwiZXhwIjoxNTYwMzAwODI5fQ.VyeKtzrCkLVJ_Ja1Q6OI4vF_-3uXvTWqZFAyDUnChso
+
+{
+    "todoId": "5cf940920fc05d01911bffa5"
 }
 
 ###
 
 GET http://{{host}}/todos/ HTTP/1.1
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjZjkwMGY5M2M0OTFkNDlmNWQ5NTkwYSIsImlhdCI6MTU1OTgzNzE0MSwiZXhwIjoxNTU5ODQwNzQxfQ.V5xJ5L0P0fEJ-DTxnivOrrsO5p6BqB_9q_UMIkSUhqQ
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjZjkwMGY5M2M0OTFkNDlmNWQ5NTkwYSIsImlhdCI6MTU2MDI5NzIyOSwiZXhwIjoxNTYwMzAwODI5fQ.VyeKtzrCkLVJ_Ja1Q6OI4vF_-3uXvTWqZFAyDUnChso

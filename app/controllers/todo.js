@@ -11,7 +11,7 @@ module.exports = {
     })
   },
   deleteById: function (req, res, next) {
-    todoModel.deleteById(req.body.todoId, function (err, todo) {
+    todoModel.findByIdAndDelete(req.body.todoId, function (err, todo) {
       if (err) {
         next(err)
       } else {
