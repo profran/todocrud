@@ -93,7 +93,7 @@ $ nodemon server.js
 
 Si abrimos [http://localhost:3000]() en el navegador
 
-![An old rock in the desert]()
+![Demo](demo.png)
 
 Ahora crearemos los esquema de Mongoose para los _todos_ o tareas. Primero crearemos un archivo `todo.js` el la ruta `api/models/`.
 
